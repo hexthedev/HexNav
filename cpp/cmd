@@ -1,0 +1,6 @@
+clang++ -std=c++11 -shared -o SpaceMousePlugin.bundle SpaceMousePlugin.cpp \
+    -I/Library/Frameworks/3DconnexionClient.framework/Headers \
+    -F/Library/Frameworks \
+    -framework IOKit \
+    -framework CoreFoundation \
+    -framework 3DconnexionClient

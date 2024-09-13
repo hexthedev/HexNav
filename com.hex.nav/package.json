@@ -1,0 +1,21 @@
+{
+  "name": "com.hex.nav",
+  "version": "1.0.0-pre.1",
+  "displayName": "0xNav",
+  "description": "Just work damnit",
+  "unity": "2023.3",
+  "dependencies": { },
+ "repository": {
+    "type": "git",
+    "url": "https://github.com/hexthedev/HexNav.git"
+  },
+  "keywords": [],
+  "license": "MIT license",
+  "author": {
+    "name": "James McCafferty",
+    "email": "jamesmccafferty@live.ca",
+    "url": "https://github.com/hexthedev/HexNav"
+  },
+  "samples":[],
+  "type": "tool"
+}
