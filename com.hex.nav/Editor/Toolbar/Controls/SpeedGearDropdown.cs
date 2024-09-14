@@ -33,23 +33,23 @@ namespace SpaceNavigatorDriver
 
             void ShowDropdown()
             {
-                // var menu = new GenericMenu();
-                // menu.AddItem(new GUIContent("Minuscule"), Settings.GearIndex == 2, () =>
-                // {
-                //     icon = m_gearMinuscule;
-                //     Settings.GearIndex = 2;
-                // });
-                // menu.AddItem(new GUIContent("Human"), Settings.GearIndex == 1, () =>
-                // {
-                //     icon = m_gearHuman;
-                //     Settings.GearIndex = 1;
-                // });
-                // menu.AddItem(new GUIContent("Huge"), Settings.GearIndex == 0, () =>
-                // {
-                //     icon = m_gearHuge;
-                //     Settings.GearIndex = 0;
-                // });
-                // menu.ShowAsContext();
+                var menu = new GenericMenu();
+                menu.AddItem(new GUIContent("Minuscule"), Settings.Profile.GearIndex == 2, () =>
+                {
+                    icon = m_gearMinuscule;
+                    Settings.Profile.GearIndex = 2;
+                });
+                menu.AddItem(new GUIContent("Human"), Settings.Profile.GearIndex == 1, () =>
+                {
+                    icon = m_gearHuman;
+                    Settings.Profile.GearIndex = 1;
+                });
+                menu.AddItem(new GUIContent("Huge"), Settings.Profile.GearIndex == 0, () =>
+                {
+                    icon = m_gearHuge;
+                    Settings.Profile.GearIndex = 0;
+                });
+                menu.ShowAsContext();
             }
         }
     }

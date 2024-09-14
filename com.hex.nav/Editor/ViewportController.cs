@@ -35,6 +35,8 @@ namespace SpaceNavigatorDriver
         static float _deltaTimeFactor = 400f;
         static bool _hadFocus;
 
+        static ushort _lastButtonValue;
+
         static ViewportController()
         {
             // Set up callbacks.
@@ -83,6 +85,25 @@ namespace SpaceNavigatorDriver
             _lastRefreshTime = EditorApplication.timeSinceStartup;
 
             ReadInput(Settings.Mode, out Vector3 translation, out Vector3 rotation, out ushort buttons);
+
+            if (_lastButtonValue != buttons)
+            {
+                switch (buttons)
+                {
+                    case 1:
+                        Settings.Profile.GearIndex = (Settings.Profile.GearIndex + 1) % Settings.Profile.Gears.Count;
+                        Debug.Log(Settings.Profile.GearIndex);
+                        SpaceNavigatorToolbar.Instance.TriggerRefresh();
+                        break;
+                    case 2:
+                        Settings.ProfileIndex = (Settings.ProfileIndex + 1) % Settings.Profiles.Count;
+                        Debug.Log(Settings.ProfileIndex);
+                        SpaceNavigatorToolbar.Instance.TriggerRefresh();
+                        break;
+                }
+                
+                _lastButtonValue = buttons;
+            }
             
             // Return if device is idle.
             if (ApproximatelyEqual(translation, Vector3.zero) &&
